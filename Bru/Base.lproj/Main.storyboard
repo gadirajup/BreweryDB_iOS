@@ -13,19 +13,36 @@
         <!--Breweries-->
         <scene sceneID="xtq-ip-Gsb">
             <objects>
-                <tableViewController id="4BK-c3-eMr" customClass="ViewController" customModule="Bru" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainVC" id="4BK-c3-eMr" customClass="ViewController" customModule="Bru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uxe-RV-Qe5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="sCq-bN-0Rv">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="sCq-bN-0Rv" customClass="BreweryCell" customModule="Bru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sCq-bN-0Rv" id="rhJ-GO-wim">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sCq-bN-0Rv" id="rhJ-GO-wim">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-oB-kHm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="i9z-ph-3li"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="MOg-oB-kHm" secondAttribute="bottom" id="46M-dc-ynX"/>
+                                        <constraint firstItem="MOg-oB-kHm" firstAttribute="top" secondItem="rhJ-GO-wim" secondAttribute="top" id="65G-0x-Ihd"/>
+                                        <constraint firstItem="MOg-oB-kHm" firstAttribute="leading" secondItem="rhJ-GO-wim" secondAttribute="leading" id="NHL-C2-DZg"/>
+                                        <constraint firstAttribute="trailing" secondItem="MOg-oB-kHm" secondAttribute="trailing" id="f8i-Pw-AhR"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="breweryImageView" destination="MOg-oB-kHm" id="mbT-ey-5lH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -39,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="1064.8" y="142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Request LocationVC-->
         <scene sceneID="Hpt-m9-Pev">
             <objects>
-                <viewController id="8NT-dI-I7W" sceneMemberID="viewController">
+                <viewController id="8NT-dI-I7W" customClass="RequestLocationVC" customModule="Bru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqK-Sa-tZd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +100,9 @@
                                                 <integer key="value" value="14"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="allowButtonPressed:" destination="8NT-dI-I7W" eventType="touchUpInside" id="Qtn-N1-GE4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKl-iy-grR">
                                         <rect key="frame" x="0.0" y="50" width="311" height="30"/>
@@ -117,7 +137,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tlI-Yy-Oof">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y70-Ah-phF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationView" automaticallyAdjustsScrollViewInsets="NO" id="Y70-Ah-phF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ghq-cW-cCz">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

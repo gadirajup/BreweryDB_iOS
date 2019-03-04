@@ -23,7 +23,26 @@ class ViewController: UITableViewController {
         
         let decoder = JSONDecoder()
         decoder.fetch(BrewDBJson.self, fromUrl: url) { (brewDBJson) in
-            self.breweries = brewDBJson.data
+            self.setBreweries(brewDBJson: brewDBJson)
+            self.tableView.reloadData()
         }
+    }
+    
+    fileprivate func setBreweries(brewDBJson: BrewDBJson) {
+        breweries = brewDBJson.data
+    }
+}
+
+extension ViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return breweries.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! BreweryCell
+        cell.setupCell(brewery: breweries[indexPath.row].brewery)
+        
+        return cell
     }
 }

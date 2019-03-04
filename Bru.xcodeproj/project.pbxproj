@@ -17,6 +17,8 @@
 		A4A551E6222CA5F100E0BE6C /* BruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A551E5222CA5F100E0BE6C /* BruUITests.swift */; };
 		A4A551F4222CA62100E0BE6C /* Breweries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A551F3222CA62100E0BE6C /* Breweries.swift */; };
 		A4A551F6222CB22000E0BE6C /* CustomJsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A551F5222CB22000E0BE6C /* CustomJsonDecoder.swift */; };
+		A4A551F8222CC59D00E0BE6C /* RequestLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A551F7222CC59D00E0BE6C /* RequestLocationVC.swift */; };
+		A4A551FA222CCA8D00E0BE6C /* BreweryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A551F9222CCA8D00E0BE6C /* BreweryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		A4A551E7222CA5F100E0BE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A551F3222CA62100E0BE6C /* Breweries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breweries.swift; sourceTree = "<group>"; };
 		A4A551F5222CB22000E0BE6C /* CustomJsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJsonDecoder.swift; sourceTree = "<group>"; };
+		A4A551F7222CC59D00E0BE6C /* RequestLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationVC.swift; sourceTree = "<group>"; };
+		A4A551F9222CCA8D00E0BE6C /* BreweryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,10 @@
 			children = (
 				A4A551C2222CA5EF00E0BE6C /* AppDelegate.swift */,
 				A4A551C4222CA5EF00E0BE6C /* ViewController.swift */,
+				A4A551F7222CC59D00E0BE6C /* RequestLocationVC.swift */,
 				A4A551F3222CA62100E0BE6C /* Breweries.swift */,
 				A4A551C6222CA5EF00E0BE6C /* Main.storyboard */,
+				A4A551F9222CCA8D00E0BE6C /* BreweryCell.swift */,
 				A4A551CC222CA5F100E0BE6C /* Assets.xcassets */,
 				A4A551CE222CA5F100E0BE6C /* LaunchScreen.storyboard */,
 				A4A551F5222CB22000E0BE6C /* CustomJsonDecoder.swift */,
@@ -266,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A551F6222CB22000E0BE6C /* CustomJsonDecoder.swift in Sources */,
+				A4A551FA222CCA8D00E0BE6C /* BreweryCell.swift in Sources */,
 				A4A551CB222CA5EF00E0BE6C /* Bru.xcdatamodeld in Sources */,
 				A4A551C5222CA5EF00E0BE6C /* ViewController.swift in Sources */,
+				A4A551F8222CC59D00E0BE6C /* RequestLocationVC.swift in Sources */,
 				A4A551F4222CA62100E0BE6C /* Breweries.swift in Sources */,
 				A4A551C3222CA5EF00E0BE6C /* AppDelegate.swift in Sources */,
 			);
