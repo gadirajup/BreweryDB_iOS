@@ -15,6 +15,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
+    }
+    
+    fileprivate func fetchData() {
         let url = "https://sandbox-api.brewerydb.com/v2//locations/?key=fcb99660800a3922dcb166a04d13a2ca&region=california"
         
         let decoder = JSONDecoder()
