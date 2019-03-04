@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
+    var breweries = [Breweries]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = "https://sandbox-api.brewerydb.com/v2//locations/?key=fcb99660800a3922dcb166a04d13a2ca&region=california"
+        
+        let decoder = JSONDecoder()
+        decoder.fetch(BrewDBJson.self, fromUrl: url) { (brewDBJson) in
+            self.breweries = brewDBJson.data
+        }
     }
-
-
 }
-
